@@ -1,0 +1,371 @@
+// 반복제어문 1
+
+형성평가 1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+형성평가 2
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int oddCount = 0;  // 홀수 개수
+        int evenCount = 0; // 짝수 개수
+        
+        while (sc.hasNextInt()) {
+            int num = sc.nextInt();
+            
+            // 0이 입력되면 반복 종료
+            if (num == 0) {
+                break;
+            }
+            
+            // 홀수/짝수 판별
+            if (num % 2 != 0) {
+                oddCount++;
+            } else {
+                evenCount++;
+            }
+        }
+        
+        System.out.println("odd : " + oddCount);
+        System.out.println("even : " + evenCount);
+    }
+}
+
+
+형성평가 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int sum = 0;   // 합계
+        int count = 0; // 입력된 유효한 정수의 개수
+        
+        while (sc.hasNextInt()) {
+            int num = sc.nextInt();
+            
+            // 0 이상 100 이하를 벗어나면 반복 종료
+            if (num < 0 || num > 100) {
+                break;
+            }
+            
+            sum += num;
+            count++;
+        }
+        
+        // 평균 계산 (소수점 이하 값을 구하기 위해 double 타입으로 형변환)
+        double avg = (double) sum / count;
+        
+        System.out.println("sum : " + sum);
+        System.out.printf("avg : %.1f\n", avg);
+    }
+}
+
+
+형성평가 4
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int count = 0; // 조건을 만족하는 수의 개수
+        
+        while (sc.hasNextInt()) {
+            int num = sc.nextInt();
+            
+            // 0이 입력되면 반복 종료
+            if (num == 0) {
+                break;
+            }
+            
+            // 3의 배수가 아니고, 5의 배수도 아닌 경우
+            if (num % 3 != 0 && num % 5 != 0) {
+                count++;
+            }
+        }
+        
+        System.out.println(count);
+    }
+}
+
+
+// 반복제어문 2
+
+
+형성평가 1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            System.out.println("JUNGOL");
+        }
+    }
+}
+
+
+형성평가 2
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        // Math.min과 Math.max를 활용해 시작값과 끝값 지정
+        int start = Math.min(a, b);
+        int end = Math.max(a, b);
+        
+        for (int i = start; i <= end; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+형성평가 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int sum = 0; // 5의 배수의 합을 저장할 변수
+        
+        // 1부터 n까지 반복
+        for (int i = 1; i <= n; i++) {
+            // 5로 나눈 나머지가 0인 경우 (5의 배수인 경우)
+            if (i % 5 == 0) {
+                sum += i;
+            }
+        }
+        
+        System.out.println(sum);
+    }
+}
+
+
+형성평가 4
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt(); // 입력받을 정수의 개수
+        int sum = 0;         // 정수들의 합
+        
+        for (int i = 0; i < n; i++) {
+            sum += sc.nextInt();
+        }
+        
+        // 평균 계산 (double로 형변환)
+        double avg = (double) sum / n;
+        
+        // 소수점 둘째 자리까지 반올림하여 출력
+        System.out.printf("%.2f\n", avg);
+    }
+}
+
+
+형성평가 5
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int evenCount = 0; // 짝수 개수
+        int oddCount = 0;  // 홀수 개수
+        
+        // 10개의 정수 입력받기
+        for (int i = 0; i < 10; i++) {
+            int num = sc.nextInt();
+            
+            // 2로 나눈 나머지가 0이면 짝수, 아니면 홀수
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+        
+        System.out.println("even : " + evenCount);
+        System.out.println("odd : " + oddCount);
+    }
+}
+
+
+형성평가 6
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        // 두 수 중 작은 값과 큰 값 구하기
+        int start = Math.min(a, b);
+        int end = Math.max(a, b);
+        
+        int sum = 0;   // 조건에 맞는 수들의 합
+        int count = 0; // 조건에 맞는 수들의 개수
+        
+        for (int i = start; i <= end; i++) {
+            // 3의 배수이거나 5의 배수인 경우 (OR 연산자 ||)
+            if (i % 3 == 0 || i % 5 == 0) {
+                sum += i;
+                count++;
+            }
+        }
+        
+        // 평균 계산 (double 형변환)
+        double avg = (double) sum / count;
+        
+        System.out.println("sum : " + sum);
+        System.out.printf("avg : %.1f\n", avg);
+    }
+}
+
+
+형성평가 7
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        for (int i = 1; i <= 10; i++) {
+            System.out.print((n * i) + " ");
+        }
+    }
+}
+
+
+형성평가 8
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int row = sc.nextInt(); // 행의 수
+        int col = sc.nextInt(); // 열의 수
+        
+        // row만큼 행 반복 (1부터 row까지)
+        for (int i = 1; i <= row; i++) {
+            // col만큼 열 반복 (1부터 col까지)
+            for (int j = 1; j <= col; j++) {
+                System.out.print((i * j) + " ");
+            }
+            // 한 행 출력이 끝나면 줄바꿈
+            System.out.println();
+        }
+    }
+}
+
+
+형성평가 9
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        // n행 반복
+        for (int i = 1; i <= n; i++) {
+            // n열 반복
+            for (int j = 1; j <= n; j++) {
+                System.out.print("(" + i + ", " + j + ") ");
+            }
+            // 한 행 출력이 끝나면 줄바꿈
+            System.out.println();
+        }
+    }
+}
+
+
+형성평가 10
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int s = sc.nextInt(); // 시작 단
+        int e = sc.nextInt(); // 끝 단
+        
+        // 1부터 9까지 곱하는 수 반복 (행 단위 출력)
+        for (int i = 1; i <= 9; i++) {
+            
+            // s가 e보다 큰 경우 (예: 5 3 -> 5, 4, 3단)
+            if (s >= e) {
+                for (int dan = s; dan >= e; dan--) {
+                    System.out.printf("%d * %d = %2d", dan, i, dan * i);
+                    if (dan > e) {
+                        System.out.print("   "); // 구구단 사이 공백 3칸
+                    }
+                }
+            } 
+            // s가 e보다 작은 경우 (예: 3 5 -> 3, 4, 5단)
+            else {
+                for (int dan = s; dan <= e; dan++) {
+                    System.out.printf("%d * %d = %2d", dan, i, dan * i);
+                    if (dan < e) {
+                        System.out.print("   "); // 구구단 사이 공백 3칸
+                    }
+                }
+            }
+            
+            // 한 행 출력이 끝나면 줄바꿈
+            System.out.println();
+        }
+    }
+}
+
+
+// 끝.
