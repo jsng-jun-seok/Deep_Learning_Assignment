@@ -1,0 +1,311 @@
+// 형성평가 1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int sum = 0;
+        int count = 0;
+
+        for (int i = 0; i < 20; i++) {
+            int num = scanner.nextInt();
+
+            // 0이 입력되면 즉시 반복 종료
+            if (num == 0) {
+                break;
+            }
+
+            sum += num;
+            count++;
+        }
+
+        // 입력된 숫자가 있는 경우 합과 정수 평균 출력
+        if (count > 0) {
+            System.out.println(sum + " " + (sum / count));
+        } else {
+            System.out.println("0 0");
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 2
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for (int i = 1; ; i++) {
+            int multiple = n * i;
+
+            // 100보다 작은 배수만 출력 (100 이상이면 종료)
+            if (multiple >= 100) {
+                break;
+            }
+
+            System.out.print(multiple + " ");
+
+            // 출력한 배수가 10의 배수이면 종료
+            if (multiple % 10 == 0) {
+                break;
+            }
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        // 1. 위쪽 영역 (1 ~ n개)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // 2. 아래쪽 영역 (n-1 ~ 1개)
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 4
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        // 1. 상단부 (역삼각형)
+        for (int i = 0; i < n; i++) {
+            // 공백
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            // 별
+            for (int j = 0; j < 2 * (n - i) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // 2. 하단부 (정삼각형)
+        for (int i = n - 2; i >= 0; i--) {
+            // 공백
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            // 별
+            for (int j = 0; j < 2 * (n - i) - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 5
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            // 공백 출력
+            for (int j = 0; j < (n - i) * 2; j++) {
+                System.out.print(" ");
+            }
+            // 별 출력
+            for (int j = 0; j < 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 6
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            // 공백 출력
+            for (int j = 0; j < (n - i) * 2; j++) {
+                System.out.print(" ");
+            }
+
+            // 숫자 출력 (1부터 i까지)
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 7
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        char ch = 'A';
+        int num = 0;
+
+        for (int i = 1; i <= n; i++) {
+            // 문자는 (n - i + 1)개 출력
+            for (int j = 0; j < n - i + 1; j++) {
+                System.out.print(ch++ + " ");
+            }
+
+            // 숫자는 (i - 1)개 출력
+            for (int j = 0; j < i - 1; j++) {
+                System.out.print(num++ + " ");
+            }
+
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 8
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        int num = 1;
+
+        for (int i = 0; i < n; i++) {
+            // 공백 출력
+            for (int j = 0; j < i * 2; j++) {
+                System.out.print(" ");
+            }
+
+            // 숫자 출력 (n - i개)
+            for (int j = 0; j < n - i; j++) {
+                System.out.print(num++ + " ");
+            }
+
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+// 형성평가 9
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    // 1. 상단부 (1 ~ n줄): #을 1개부터 n개까지 출력
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("# ");
+        }
+        printf("\n");
+    }
+
+    // 2. 하단부 (n-1줄): 공백을 늘해가며 #을 n-1개부터 1개까지 출력
+    for (int i = 1; i <= n - 1; i++) {
+        // 공백 출력: i * 2개
+        for (int j = 0; j < i * 2; j++) {
+            printf(" ");
+        }
+        // # 출력: (n - i)개
+        for (int j = 0; j < n - i; j++) {
+            printf("# ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+// 형성평가 10
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        int num = 1;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(num + " ");
+                
+                // 다음 홀수로 증가
+                num += 2;
+                
+                // 10 이상이 되면 다시 1로 순환
+                if (num > 9) {
+                    num = 1;
+                }
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
